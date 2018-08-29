@@ -33,3 +33,14 @@
   </h1>
 
 </div>
+<div id="gauge" class="200x160px"></div>
+
+<script>
+  var g = new JustGage({
+    id: "gauge",
+    value: {{ tsPercent }},
+  min: 0,
+    max: 100,
+      title: "TypeScript %"
+  });
+</script>

@@ -3,7 +3,7 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const round = require("./round");
 
-const ACCESS_TOKEN = "1f7fb4c9929a85f9e8fd22d3f2c8a4eb42466991";
+const ACCESS_TOKEN = process.env.GITHUB_ACCESS_TOKEN;
 const query = `
   query {
     repository(owner:"react-puzzle-games", name:"15-puzzle") {
@@ -33,6 +33,7 @@ app.get("/", function(req, res) {
   })
     .then(res => res.json())
     .then(body => {
+      console.log(JSON.stringify(body));
       // Example body
       // {"data":{"repository":{"languages":{"edges":[{"size":29412,"node":{"name":"JavaScript","color":"#f1e05a"}},{"size":501,"node":{"name":"HTML","color":"#e34c26"}},{"size":291,"node":{"name":"CSS","color":"#563d7c"}}]}}}}
       const result = { languages: [] };
