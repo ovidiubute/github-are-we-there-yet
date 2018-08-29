@@ -1,0 +1,35 @@
+<style>
+  body {
+    color: #262626;
+    font-family: sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  .IsItReady {
+    text-align: center;
+  }
+
+  .IsItReadyText {
+    font-size: 120px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  i {
+    font-style: normal;
+  }
+</style>
+
+<div class="IsItReady">
+  <h1 class="IsItReadyText">{{#if isTS100}} YES {{else}} NO {{/if}} {{#if isTS100}}
+    <i>🎉</i> {{else}}
+    <i>😞</i> {{/if}}
+  </h1>
+
+</div>
